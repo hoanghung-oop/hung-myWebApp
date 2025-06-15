@@ -1,198 +1,234 @@
-/* product.css */
-body {
-  background-color: #fefefe;
-  color: #333;
-  font-family: "Segoe UI", sans-serif;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tất Cả Game PS5 | PS5 GameStore</title>
+  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="product.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="logo"><span>PS5</span>GameStore</div>
+    <nav id="main-nav">
+        <a href="index.html">Trang Chủ</a>
+        <a href="product.html">Game PS5</a>
+        <a href="#" class="coming-soon">Phụ Kiện</a>
+        <a href="#" class="coming-soon">Tin Tức</a>
+    </nav>
+    <div class="menu-toggle" id="menu-toggle">
+        <i class="fas fa-bars"></i>
+    </div>
+    <div class="user-icons">
+        <i class="fas fa-search coming-soon"></i>
+        <i class="fas fa-user coming-soon"></i>
+        <i class="fas fa-heart coming-soon"></i>
+        <i class="fas fa-shopping-cart" id="cart-icon"></i>
+    </div>      
+  </header>
 
-.section-title {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-top: 40px;
-  margin-bottom: 20px;
-  color: #222;
-}
+  <section class="notice-banner">
+    <div class="notice-header" id="noticeToggle">
+      <strong>Ưu đãi đặc biệt</strong>
+      <i class="fas fa-chevron-down toggle-icon"></i>
+    </div>
+    <div class="notice-content" id="noticeContent">
+      <p>
+        Giảm giá 15% cho tất cả các game PS5 khi mua từ 2 sản phẩm trở lên
+        <strong>Mã: PS5GAME15</strong>
+      </p>
+      <p>
+        Miễn phí vận chuyển cho đơn hàng từ 1.500.000 ₫
+      </p>
+      <p>Hỗ trợ đổi trả trong vòng 7 ngày nếu sản phẩm lỗi</p>
+    </div>
+  </section>
 
-/* Filters */
-.product-filters {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  margin: 40px 20px 20px;
-  gap: 20px;
-  background: #f5f5f5;
-  padding: 15px;
-  border-radius: 8px;
-}
+  <main class="all-products">
+    <h2 class="section-title">Tất Cả Game PS5</h2>
+    <div class="product-filters">
+      <div class="filters">
+        <label for="filter-author">Nhà phát hành:</label>
+        <select id="filter-author">
+          <option value="">Tất cả</option>
+          <option value="sony">Sony</option>
+          <option value="square-enix">Square Enix</option>
+          <option value="bandai">Bandai Namco</option>
+        </select>
 
-.product-filters .filters,
-.product-filters .sort {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
-}
+        <label for="filter-type">Thể loại:</label>
+        <select id="filter-type">
+          <option value="">Tất cả</option>
+          <option value="action">Hành động</option>
+          <option value="rpg">Nhập vai</option>
+          <option value="adventure">Phiêu lưu</option>
+        </select>
+      </div>
 
-.product-filters label {
-  font-weight: 500;
-  color: #444;
-}
+      <div class="sort">
+        <label for="sort-price">Sắp xếp:</label>
+        <select id="sort-price">
+          <option value="">--</option>
+          <option value="asc">Giá thấp - cao</option>
+          <option value="desc">Giá cao - thấp</option>
+        </select>
+      </div>
+    </div>
 
-.product-filters select {
-  padding: 8px 12px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 14px;
-  background-color: #fff;
-  color: #333;
-  min-width: 150px;
-  cursor: pointer;
-}
+    <div class="product-gallery">
+      <!-- God of War Ragnarök -->
+      <div class="product-card"
+          data-category="action"
+          data-transcriber="Sony"
+          onclick="openModal('God of War Ragnarök', '/public/images/gow-ragnarok.jpg', 'Tiếp nối câu chuyện của Kratos và Atreus trong hành trình qua các vùng đất Bắc Âu thần thoại.', '1.299.000 ₫', 'Santa Monica Studio', 'Sony', 'https://www.youtube.com/embed/EE-4GvjKcfs')">
+          <div class="product-tag">Bán chạy</div>
+          <div class="product-image">
+              <img src="/public/images/gow-ragnarok.jpg" alt="God of War Ragnarök" />
+          </div>
+          <h4>God of War Ragnarök</h4>
+          <div class="product-price">1.299.000 ₫</div>
+          <button class="price-btn">Xem chi tiết</button>
+      </div>
 
-.product-filters select:focus {
-  border-color: #005baa;
-  outline: none;
-}
+      <!-- Spider-Man 2 -->
+      <div class="product-card"
+          data-category="action"
+          data-transcriber="Sony"
+          onclick="openModal('Spider-Man 2', '/public/images/spiderman2.jpg', 'Trải nghiệm đóng vai cả Peter Parker và Miles Morales trong cuộc phiêu lưu mới.', '1.499.000 ₫', 'Insomniac Games', 'Sony', 'https://www.youtube.com/embed/qIQ3xNqkVC4')">
+          <div class="product-tag">Mới</div>
+          <div class="product-image">
+              <img src="/public/images/spiderman2.jpg" alt="Spider-Man 2" />
+          </div>
+          <h4>Spider-Man 2</h4>
+          <div class="product-price">1.499.000 ₫</div>
+          <button class="price-btn">Xem chi tiết</button>
+      </div>
 
-/* Product List */
-.product-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  max-width: 1300px;
-  margin: 0 auto;
-  padding: 20px;
-}
+      <!-- Final Fantasy XVI -->
+      <div class="product-card"
+          data-category="rpg"
+          data-transcriber="Square Enix"
+          onclick="openModal('Final Fantasy XVI', '/public/images/ff16.jpg', 'Hành trình của Clive Rosfield trong thế giới Valisthea đầy biến động.', '1.399.000 ₫', 'Square Enix', 'Square Enix', 'https://www.youtube.com/embed/3zqASQrK41I')">
+          <div class="product-tag">Độc quyền</div>
+          <div class="product-image">
+              <img src="/public/images/ff16.jpg" alt="Final Fantasy XVI" />
+          </div>
+          <h4>Final Fantasy XVI</h4>
+          <div class="product-price">1.399.000 ₫</div>
+          <button class="price-btn">Xem chi tiết</button>
+      </div>
 
-.product-card {
-  width: calc(20% - 20px);
-  min-width: 200px;
-  background: #fff;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  padding: 15px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-  position: relative;
-}
+      <!-- Horizon Forbidden West -->
+      <div class="product-card"
+          data-category="adventure"
+          data-transcriber="Sony"
+          onclick="openModal('Horizon Forbidden West', '/public/images/horizon.jpg', 'Tiếp nối cuộc hành trình của Aloy khi cô khám phá vùng đất phía Tây cấm địa.', '1.199.000 ₫', 'Guerrilla Games', 'Sony', 'https://www.youtube.com/embed/Lq594XmpPBg')">
+          <div class="product-tag">Giảm giá</div>
+          <div class="product-image">
+              <img src="/public/images/horizon.jpg" alt="Horizon Forbidden West" />
+          </div>
+          <h4>Horizon Forbidden West</h4>
+          <div class="product-price">1.199.000 ₫</div>
+          <button class="price-btn">Xem chi tiết</button>
+      </div>
 
-.product-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-}
+      <!-- Elden Ring -->
+      <div class="product-card"
+          data-category="rpg"
+          data-transcriber="Bandai"
+          onclick="openModal('Elden Ring', '/public/images/elden-ring.jpg', 'Game nhập vai hành động thế giới mở từ nhà sáng tạo của Dark Souls và George R.R. Martin.', '1.350.000 ₫', 'FromSoftware', 'Bandai Namco', 'https://www.youtube.com/embed/E3Huy2cdih0')">
+          <div class="product-tag">Đề cử GOTY</div>
+          <div class="product-image">
+              <img src="/public/images/elden-ring.jpg" alt="Elden Ring" />
+          </div>
+          <h4>Elden Ring</h4>
+          <div class="product-price">1.350.000 ₫</div>
+          <button class="price-btn">Xem chi tiết</button>
+      </div>
 
-.product-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  margin-bottom: 10px;
-  border-radius: 8px;
-}
+      <!-- 15 sản phẩm khác tương tự -->
+      <!-- ... -->
+    </div>
 
-.product-card h4 {
-  font-size: 1.1em;
-  color: #222;
-  margin: 10px 0;
-}
+    <div class="pagination" id="pagination"></div>
+  </main>
 
-.price-btn {
-  background-color: #005baa;
-  color: white;
-  font-weight: bold;
-  padding: 10px 20px;
-  border-radius: 25px;
-  font-size: 1em;
-  border: none;
-  transition: background-color 0.3s ease;
-  margin-top: 10px;
-  cursor: pointer;
-}
+  <footer class="main-footer">
+    <div class="footer-container">
+      <div class="footer-column">
+        <h4>THÔNG TIN</h4>
+        <a href="#">Chính sách vận chuyển</a>
+        <a href="#">Chính sách đổi trả</a>
+        <a href="#">Điều khoản dịch vụ</a>
+        <a href="#">Bảo mật thông tin</a>
+      </div>
+      <div class="footer-column">
+        <h4>HỖ TRỢ</h4>
+        <a href="#">Câu hỏi thường gặp</a>
+        <a href="#">Liên hệ</a>
+        <a href="#">Hướng dẫn mua hàng</a>
+        <a href="#">Bảo hành</a>
+      </div>
+      <div class="footer-column">
+        <h4>ĐĂNG KÝ NHẬN TIN</h4>
+        <p>Nhận thông tin khuyến mãi và game mới nhất!</p>
+        <form>
+          <input type="email" placeholder="Email của bạn" />
+          <button type="submit">Đăng ký</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 PS5GameStore - Đại lý ủy quyền Sony tại Việt Nam</p>
+    </div>
+  </footer>
 
-.price-btn:hover {
-  background-color: #003d7a;
-}
-
-/* Product tag */
-.product-tag {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background-color: #005baa;
-  color: white;
-  font-size: 0.75em;
-  padding: 4px 10px;
-  border-radius: 999px;
-  font-weight: 600;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  z-index: 2;
-}
-
-.product-price {
-  font-weight: bold;
-  font-size: 1.1em;
-  color: #005baa;
-  margin: 8px 0;
-}
-
-/* Pagination */
-.pagination {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  padding: 40px 0 60px;
-}
-
-.pagination button {
-  background-color: #e6f4ff;
-  color: #005baa;
-  border: 1px solid #005baa;
-  border-radius: 8px;
-  padding: 8px 14px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  font-weight: 500;
-}
-
-.pagination button:hover {
-  background-color: #005baa;
-  color: white;
-  transform: scale(1.05);
-}
-
-.pagination button.active {
-  background-color: #005baa;
-  color: white;
-  box-shadow: 0 0 6px rgba(0, 91, 170, 0.4);
-  transform: scale(1.1);
-  pointer-events: none;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .product-filters {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .product-filters .filters,
-  .product-filters .sort {
-    width: 100%;
-  }
-
-  .product-filters select {
-    width: 100%;
-  }
+  <!-- Modal sản phẩm -->
+  <div class="modal" id="product-modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <div class="modal-body">
+        <img id="modal-image" alt="Ảnh sản phẩm" class="modal-image" />
+        <div class="modal-info">
+          <h2 id="modal-title">Tên sản phẩm</h2>
+          <p id="modal-description">Mô tả sản phẩm chi tiết.</p>
+          <p><strong>Nhà phát triển:</strong> <span id="modal-author"></span></p>
+          <p><strong>Nhà phát hành:</strong> <span id="modal-transcriber"></span></p>
+          <p><strong>Giá:</strong> <span id="modal-price"></span></p>
+          <button class="add-cart-btn">Thêm vào giỏ hàng</button>
+        </div>
+        <div class="video-container">
+          <iframe id="modal-video" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
   
-  .product-card {
-    width: calc(50% - 20px);
-  }
-}
+  <!-- Giỏ hàng popup -->
+  <div class="cart-overlay" id="cartOverlay">
+    <div class="cart-panel">
+      <div class="cart-header">
+        <h3>Giỏ hàng</h3>
+        <span class="close-cart" onclick="toggleCart()">&times;</span>
+      </div>
+      <div class="cart-items" id="cartItems"></div>
+      <div class="cart-footer">
+        <div class="discount-code">
+            <input type="text" placeholder="Nhập mã giảm giá" />
+            <button class="apply-coupon-btn" onclick="applyCoupon()">Áp dụng</button>
+        </div>
+        <div class="cart-total">
+          <span>Tổng cộng:</span>
+          <strong id="cartTotal">0 ₫</strong>
+        </div>
+        <button class="checkout-btn">Thanh toán</button>
+      </div>
+    </div>
+  </div>
+  
+  <script src="index.js"></script>
+  <script src="product.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>
